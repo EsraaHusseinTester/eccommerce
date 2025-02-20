@@ -19,7 +19,7 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     hot: false,
-    port: 65000,
+    port: 64000,
     open: true,
     devMiddleware:{
       writeToDisk: true,
