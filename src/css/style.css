@@ -191,3 +191,22 @@ body{
     color: #868686;
     font-size: 38px;
 }
+#srote-features{
+    box-shadow: 0 0 15px #EEF0EA;
+    background-image: url(../images/bg_features.png);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -30px;
+    background-size: auto 60%;
+    background-position: -10px -20px;
+    background-color: #fff;
+    padding-bottom: 35px;
+    padding-top: 25px;
+}
+#srote-features .feature>img{
+    height: 40px;
+    margin-top: 40px;
+}
+#srote-features .feature+.feature{
+    border-right: 1px solid #EEF0EA;
+}
