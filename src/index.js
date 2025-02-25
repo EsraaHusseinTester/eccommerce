@@ -10,5 +10,7 @@ document.querySelectorAll('.add-to-card-btn').forEach(item =>{
     })
 })
 
+document.getElementById("copyright").innerHTML = "جميع الحقوق محفوظة للمتجر سنة"  + new Date().getFullYear();
+
 console.log("أهلًا بك في متجر عربي")
 console.log("أهلًا بك في أكاديمية حسوب")
