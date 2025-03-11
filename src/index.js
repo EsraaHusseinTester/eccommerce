@@ -63,8 +63,66 @@ function calculateTotalPrice (){
 
 }
 
+const citiesByCountry = {
+    sa: ['الرياض','جدة'],
+    eg: ['الاسكندرية','القاهرة'],
+    jo: ['عمان','الزرقاء'],
+    sy: ['دمشق','حلب', 'حماه']
+}
+
+document.querySelectorAll('select[name="country"]').forEach(item => {
+    item.addEventListener('change', () => {
+        const country = item.value
+
+        const cities = citiesByCountry[country]
+
+        document.querySelectorAll('#paymentcities option').forEach( option => option.remove () )
+
+        const firstOption = document.createElement('option')
+        const optionText = document.createTextNode('اختر المدينة')
+        firstOption.appendChild(optionText)
+        firstOption.setAttribute('value','')
+        firstOption.setAttribute('disabled', 'true')
+        firstOption.setAttribute('selected', 'true')
+
+        const citi_options = document.getElementById('paymentcities')
+        citi_options.appendChild(firstOption)
+
+        cities.forEach(city => {
+            const newOption = document.createElement('option')
+            const optionText = document.createTextNode(city)
+            newOption.appendChild(optionText)
+            newOption.setAttribute('value',city)
+            citi_options.appendChild(newOption)
+        })
+    })
+})
+
+
+document.querySelectorAll('#form-checkout input[name="payment-method"]').forEach(item=>{
+    item.addEventListener("change", () =>{
+        const paymentMethod = item.value
+
+        const cteditCardInputs = document.querySelectorAll('#credit_card_info input');
+
+        if(paymentMethod === 'on_delivery'){
+            cteditCardInputs.forEach(input =>{
+                input.style.display = 'none'
+            })
+        }else{
+            cteditCardInputs.forEach(input =>{
+                input.style.display = 'block'
+            })  
+        }
+    })
+})
+
 
 document.getElementById("copyright").innerHTML = "جميع الحقوق محفوظة للمتجر سنة"  + new Date().getFullYear();
+
+
+
+
 
 console.log("أهلًا بك في متجر عربي")
 console.log("أهلًا بك في أكاديمية حسوب")
