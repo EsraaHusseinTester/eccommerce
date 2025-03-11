@@ -635,6 +635,22 @@ Search page
     border-color: #F8AD47 !important;
 }
 
+#map {
+    padding: 0;
+}
+
+.contact-options h4 {
+    font-size: 18px;
+}
+
+#contact-info .fa-lg {
+    color: #f3af41;
+    margin: 10px 0px 0px 10px;
+}
+
+.contact-options textarea {
+    height: 105px !important;
+}
 
 @media (max-width: 1399.98px) { 
     #carousel-featured .carousel-indicators{
